@@ -121,7 +121,7 @@ public class SouvenirOrderDetailServlet extends HttpServlet {
 			// send the ErrorPage view.
 			req.setAttribute("errorMsgs", errorMsgs);
 
-			try {
+//			try {
 				/*************************** 1.接收請求參數 - 輸入格式的錯誤處理 **********************/
 				String sou_id = req.getParameter("sou_id").trim();		
 				Integer sou_order_amount = null;
@@ -167,11 +167,11 @@ public class SouvenirOrderDetailServlet extends HttpServlet {
 				successView.forward(req, res);
 
 				/*************************** 其他可能的錯誤處理 *************************************/
-			} catch (Exception e) {
-				errorMsgs.add("修改資料失敗:" + e.getMessage());
-				RequestDispatcher failureView = req.getRequestDispatcher("/back-end/souvenir_order_detail/update_souvenirorderdetail_input.jsp");
-				failureView.forward(req, res);
-			}
+//			} catch (Exception e) {
+//				errorMsgs.add("修改資料失敗:" + e.getMessage());
+//				RequestDispatcher failureView = req.getRequestDispatcher("/back-end/souvenir_order_detail/update_souvenirorderdetail_input.jsp");
+//				failureView.forward(req, res);
+//			}
 		}
 
 		if ("insert".equals(action)) { // 來自addEmp.jsp的請求
